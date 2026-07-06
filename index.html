@@ -2,138 +2,91 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Anchhi | Luxury Fashion</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:Inter,sans-serif;background:#0b0b0b;color:#fff}
-h1,h2,h3{font-family:'Playfair Display',serif}
-:root{--gold:#C9A96E;--ivory:#F8F5EE}
-nav{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;padding:22px 8%;background:rgba(0,0,0,.55);backdrop-filter:blur(10px);z-index:1000}
-nav h2{color:var(--gold)}
-nav ul{display:flex;gap:30px;list-style:none}
-nav a{color:#fff;text-decoration:none}
-section{padding:90px 8%}
-.hero{height:100vh;display:flex;align-items:center;background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.7)),url('https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1600&auto=format&fit=crop');background-size:cover;background-position:center}
-.badge{display:inline-block;padding:10px 20px;border-radius:30px;border:1px solid rgba(201,169,110,.4);color:var(--gold);background:rgba(255,255,255,.05);margin-bottom:25px}
-.hero h1{font-size:4.8rem;max-width:700px}
-.hero p{margin-top:20px;max-width:650px;line-height:1.8;color:#ddd}
-.btn{display:inline-block;margin-top:30px;padding:15px 34px;border-radius:30px;background:var(--gold);color:#000;text-decoration:none;font-weight:700}
-.about,.contact{background:var(--ivory);color:#111}
-.section-title{font-size:3rem;margin-bottom:30px}
-.cards,.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
-.card,.feature{background:#151515;border:1px solid rgba(201,169,110,.25);padding:28px;border-radius:16px}
-.card h3{color:var(--gold);margin-bottom:10px}
-.designer{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.photos{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.photos img{width:100%;border-radius:18px;border:2px solid rgba(201,169,110,.35);transition:.3s}
-.photos img:hover{transform:translateY(-6px)}
-.announcement{text-align:center;background:#111}
-form{max-width:650px}
-input{width:100%;padding:16px;margin:12px 0;border-radius:10px;border:1px solid #ccc}
+body{background:#070707;color:#fff;font-family:Inter,sans-serif}
+nav{position:fixed;top:0;width:100%;padding:20px 7%;display:flex;justify-content:space-between;background:rgba(0,0,0,.55);backdrop-filter:blur(10px);z-index:100}
+nav h2{font:700 2.7rem 'Playfair Display',serif;color:#ddb97a}
+nav ul{display:flex;gap:34px;list-style:none}
+nav a{text-decoration:none;color:#fff}
+.hero{height:100vh;padding:0 7%;display:flex;align-items:center;background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.7)),url('https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1600&auto=format&fit=crop') center/cover}
+.hero h1{font:700 5rem 'Playfair Display',serif;max-width:700px}
+.hero p{max-width:650px;color:#ddd;line-height:1.8;margin:20px 0}
+.badge{display:inline-block;padding:10px 18px;border:1px solid #8c6a35;border-radius:24px;color:#ddb97a;margin-bottom:18px}
+.btn{display:inline-block;background:#ddb97a;color:#000;padding:14px 28px;border-radius:30px;text-decoration:none;font-weight:700}
+section{padding:90px 7%}
+.about{position:relative;min-height:760px;overflow:hidden;background:#000}
+.about::before{content:"";position:absolute;inset:0;background:url('cofounder.jpeg') right center/contain no-repeat;opacity:.98}
+.about::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#000 0%,rgba(0,0,0,.82) 38%,rgba(0,0,0,.2) 72%,rgba(0,0,0,.05) 100%)}
+.aboutwrap{position:relative;z-index:2;max-width:560px;padding:36px;background:rgba(10,10,10,.38);backdrop-filter:blur(12px);border:1px solid rgba(221,185,122,.25);border-radius:20px}
+.about h2{font:700 4rem 'Playfair Display',serif;color:#ddb97a;margin-bottom:25px}
+.about p{color:#f2f2f2;line-height:1.9}
+.credit{position:absolute;right:10%;bottom:12%;z-index:3;text-align:right}
+.credit h3{font:700 2.3rem 'Playfair Display',serif;color:#f0cb88;text-shadow:0 0 18px rgba(221,185,122,.3)}
+.credit span{display:block;color:#e5e5e5;font-size:1rem;letter-spacing:3px;text-transform:uppercase}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.card{padding:28px;border:1px solid #6e552c;border-radius:16px;background:#111}
+.card h3{color:#ddb97a;margin-bottom:10px}
+.designer{display:grid;grid-template-columns:1fr 320px;gap:40px;align-items:center}
+.designer img{width:100%;border-radius:18px;border:2px solid #7b6132}
 footer{text-align:center;padding:40px;background:#000}
 @media(max-width:900px){
-.designer{grid-template-columns:1fr}
-.hero h1{font-size:3rem}
 nav ul{display:none}
+.hero h1{font-size:3rem}
+.about::before{background-position:center top;background-size:cover;opacity:.35}
+.credit{position:relative;right:auto;bottom:auto;text-align:left;margin-top:30px}
+.designer{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
-<nav>
-<h2>Anchhi</h2>
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#collections">Collections</a></li>
-<li><a href="#designer">Designer</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
+<nav><h2>Anchhi</h2><ul><li><a href="#about">About</a></li><li><a href="#collections">Collections</a></li><li><a href="#designer">Designer</a></li></ul></nav>
 
 <section class="hero">
 <div>
 <div class="badge">Pre‑Launch | Opening Soon in South Delhi</div>
 <h1>Where Fashion Becomes Identity</h1>
-<p>South Delhi’s upcoming destination for luxury fashion, couture styling, and statement pieces crafted for modern elegance.</p>
-<a href="#" class="btn">Launching Soon</a>
+<p>South Delhi's upcoming destination for luxury fashion, couture styling, and statement pieces crafted for modern elegance.</p>
+<a class="btn" href="#">Launching Soon</a>
 </div>
 </section>
 
 <section id="about" class="about">
-<h2 class="section-title">About Anchhi</h2>
+<div class="aboutwrap">
+<h2>About Anchhi</h2>
 <p>Anchhi is an upcoming luxury fashion house based in South Delhi, created for individuals who believe style is more than clothing—it is expression, identity, and confidence.<br><br>
 We specialize in premium fashion wear, designer couture, and fancy dress collections that blend timeless sophistication with contemporary trends.<br><br>
 From elegant gowns and luxury ethnic wear to bold modern silhouettes, every piece is crafted with precision, artistry, and refined aesthetics.<br><br>
 At Anchhi, fashion is not just worn. It is experienced.</p>
+</div>
+
+<div class="credit">
+<h3>Naresh Kumar</h3>
+<span>Co‑Founder</span>
+</div>
 </section>
 
 <section id="collections">
-<h2 class="section-title">What We Offer</h2>
+<h2 style="font:700 3.5rem 'Playfair Display',serif;color:#ddb97a;text-align:center;margin-bottom:35px">What We Offer</h2>
 <div class="cards">
 <div class="card"><h3>Luxury Evening Wear</h3><p>Elegant statement pieces designed for unforgettable entrances.</p></div>
-<div class="card"><h3>Designer Fancy Dresses</h3><p>Exclusive fashion-forward designs for celebrations and special occasions.</p></div>
+<div class="card"><h3>Designer Fancy Dresses</h3><p>Exclusive fashion-forward designs for celebrations.</p></div>
 <div class="card"><h3>Premium Ethnic Fusion</h3><p>Traditional craftsmanship blended with modern silhouettes.</p></div>
 <div class="card"><h3>Custom Styling</h3><p>Personalized fashion curated to match your identity.</p></div>
 </div>
 </section>
 
 <section id="designer">
-<h2 class="section-title">Meet The Master</h2>
+<h2 style="font:700 3.5rem 'Playfair Display',serif;color:#ddb97a;margin-bottom:25px">Meet The Master</h2>
 <div class="designer">
-<div>
-<p style="line-height:1.9;color:#ddd;">
-Behind <b style="color:#C9A96E;">Anchhi</b> stands the creative vision of <b>Mr. Mir Irfan Mastar</b>, the master designer shaping the identity of our brand.<br><br>
-Known for his sharp eye for detail and elegant design sense, Mr. Mastar brings years of fashion understanding, creativity, and artistic precision into every design.<br><br>
-His expertise lies in transforming fabrics into statement pieces that feel luxurious, modern, and timeless. Whether it is couture wear, fancy dresses, ethnic styling, or custom pieces, his designs are crafted to make every individual stand out with confidence.<br><br>
-Every Anchhi creation carries his signature touch—refined, bold, and unforgettable.
-</p>
-</div>
-<div class="photos">
-<img src="designer1.png" alt="Mr. Mir Irfan Mastar">
-<img src="designer2.png" alt="Mr. Mir Irfan Mastar">
-</div>
+<div><p style="line-height:1.9;color:#ddd">Behind Anchhi stands the creative vision of <span style="color:#ddb97a;font-weight:700">Mr. Mir Irfan Mastar</span>, the master designer shaping the identity of our brand. His refined eye for detail and timeless aesthetics inspires every collection, creating luxurious pieces that balance elegance, craftsmanship, and individuality.</p></div>
+<div><img src="designer2.png"></div>
 </div>
 </section>
 
-<section>
-<h2 class="section-title">Why Anchhi</h2>
-<div class="features">
-<div class="feature">Luxury craftsmanship</div>
-<div class="feature">Premium fabrics</div>
-<div class="feature">Exclusive designs</div>
-<div class="feature">Personalized styling</div>
-<div class="feature">Trend-forward collections</div>
-<div class="feature">South Delhi based boutique experience</div>
-</div>
-</section>
-
-<section class="announcement">
-<h2 class="section-title">Something Extraordinary is Coming</h2>
-<p>We are preparing to launch a fashion experience that combines luxury, creativity, and modern elegance.<br>Be among the first to witness Anchhi.</p>
-<a href="#" class="btn">Join Waitlist</a>
-</section>
-
-<section id="contact" class="contact">
-<h2 class="section-title">Stay Connected</h2>
-<p>Be the first to know about our launch, exclusive collections, and special previews.</p>
-<form>
-<input placeholder="Name">
-<input type="email" placeholder="Email">
-<input placeholder="Phone Number">
-<a href="#" class="btn">Notify Me</a>
-</form>
-<p style="margin-top:25px">South Delhi, New Delhi, India</p>
-<p style="margin-top:10px">Instagram • Facebook • Pinterest</p>
-</section>
-
-<footer>
-<h2 style="color:#C9A96E;">Anchhi</h2>
-<p>Luxury Fashion. Bold Identity. Timeless Elegance.</p>
-<p>About | Collections | Contact</p>
-<p>© 2026 Anchhi. All Rights Reserved.</p>
-</footer>
-</body>
-</html>
+<footer><h2 style="color:#ddb97a">Anchhi</h2><p>Luxury Fashion. Bold Identity. Timeless Elegance.</p><p>© 2026 Anchhi. All Rights Reserved.</p></footer>
+</body></html>
